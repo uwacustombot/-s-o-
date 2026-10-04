@@ -26,27 +26,27 @@ export default {
             option
                 .setName("duration")
                 .setDescription(
-                    "How long the giveaway should last (e.g., 1h, 30m, 5d).",
+                    "ჩoω ℓong tჩɛ gιvɛαωαყ აჩouℓᴅ ℓαაt (ɛ𓈒g𓈒, 1ჩ, 30ო, 5ᴅ).",
                 )
                 .setRequired(true),
         )
         .addIntegerOption((option) =>
             option
-                .setName("winners")
-                .setDescription("The number of winners to pick.")
+                .setName("ωιnnɛrა")
+                .setDescription("tჩɛ nuოbɛr oƒ ωιnnɛrა to pιck")
                 .setMinValue(GIVEAWAY_MIN_WINNERS)
                 .setMaxValue(GIVEAWAY_MAX_WINNERS)
                 .setRequired(true),
         )
         .addStringOption((option) =>
             option
-                .setName("prize")
-                .setDescription("The prize being given away.")
+                .setName("prιzɛ")
+                .setDescription("tჩɛ prιzɛ bɛιng gιvɛn αωαყ")
                 .setRequired(true),
         )
         .addChannelOption((option) =>
             option
-                .setName("channel")
+                .setName("cჩαnnɛℓ")
                 .setDescription("The channel to send the giveaway to (defaults to current channel).")
                 .addChannelTypes(ChannelType.GuildText)
                 .setRequired(false),
@@ -70,7 +70,7 @@ export default {
             throw new TitanBotError(
                 'User lacks ManageGuild permission',
                 ErrorTypes.PERMISSION,
-                "You need the 'Manage Server' permission to start a giveaway.",
+                "ყou nɛɛᴅ tჩɛ ოαnαgɛ აɛrvɛr pɛrოιააιon to აtαrt α gιvɛαωαყ",
                 { userId: interaction.user.id, guildId: interaction.guildId }
             );
         }
@@ -143,22 +143,22 @@ export default {
                     userId: interaction.user.id,
                     fields: [
                         {
-                            name: 'Prize',
+                            name: 'prιzɛ',
                             value: prizeName,
                             inline: true
                         },
                         {
-                            name: 'Winners',
+                            name: 'ωιnnɛrა',
                             value: winnerCount.toString(),
                             inline: true
                         },
                         {
-                            name: 'Duration',
+                            name: 'ᴅurαtιon',
                             value: durationString,
                             inline: true
                         },
                         {
-                            name: 'Channel',
+                            name: 'cჩαnnɛℓ',
                             value: targetChannel.toString(),
                             inline: true
                         }
@@ -174,7 +174,7 @@ export default {
         await InteractionHelper.safeReply(interaction, {
             embeds: [
                 successEmbed(
-                    `Giveaway Started! 🎉`,
+                    `**gιvɛαωαყ აtαrtɛᴅ**`,
                     `A new giveaway for **${prizeName}** has been started in ${targetChannel} and will end in **${durationString}**.`,
                 ),
             ],
