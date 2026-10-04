@@ -53,7 +53,7 @@ export const giveawayJoinHandler = {
                 const userId = interaction.user.id;
 
                 if (participants.includes(userId)) {
-                    return replyUserError(interaction, { type: ErrorTypes.UNKNOWN, message: 'You have already entered this giveaway! 🎉' });
+                    return replyUserError(interaction, { type: ErrorTypes.UNKNOWN, message: 'ყou ჩαvɛ αℓrɛαԃყ ɛntɛrɛԃ tჩιა gιvɛαωαყ' });
                 }
 
                 participants.push(userId);
@@ -74,7 +74,7 @@ export const giveawayJoinHandler = {
                 await interaction.reply({
                     embeds: [
                         successEmbed(
-                            'Success! You have entered the giveaway! 🎉',
+                            'ყou ჩαvɛ ɛntɛrɛԃ tჩιა gιvɛαωαყ',
                             `Good luck! There are now ${participants.length} entry/entries.`
                         )
                     ],
