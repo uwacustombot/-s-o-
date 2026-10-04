@@ -22,42 +22,42 @@ export default {
     category: 'Music',
     data: new SlashCommandBuilder()
         .setName('music')
-        .setDescription('Manage playback, queue, and voice session settings')
+        .setDescription('manage playback, queue, and voice session settings')
         .addSubcommand((sub) =>
-            sub.setName('pause').setDescription('Pause playback'),
+            sub.setName('pause').setDescription('pause playback'),
         )
         .addSubcommand((sub) =>
-            sub.setName('resume').setDescription('Resume playback'),
+            sub.setName('resume').setDescription('resume playback'),
         )
         .addSubcommand((sub) =>
-            sub.setName('skip').setDescription('Skip the current track'),
+            sub.setName('skip').setDescription('skip the current track'),
         )
         .addSubcommand((sub) =>
-            sub.setName('stop').setDescription('Stop playback and clear the queue'),
+            sub.setName('stop').setDescription('stop playback and clear the queue'),
         )
         .addSubcommand((sub) =>
-            sub.setName('shuffle').setDescription('Shuffle the queue'),
+            sub.setName('shuffle').setDescription('shuffle the queue'),
         )
         .addSubcommand((sub) =>
             sub
                 .setName('loop')
-                .setDescription('Set loop mode')
+                .setDescription('set loop mode')
                 .addStringOption((opt) =>
                     opt
                         .setName('mode')
                         .setDescription('Loop mode')
                         .setRequired(true)
                         .addChoices(
-                            { name: 'Off', value: 'none' },
-                            { name: 'Track', value: 'track' },
-                            { name: 'Queue', value: 'queue' },
+                            { name: 'off', value: 'none' },
+                            { name: 'track', value: 'track' },
+                            { name: 'queue', value: 'queue' },
                         ),
                 ),
         )
         .addSubcommand((sub) =>
             sub
                 .setName('volume')
-                .setDescription('Set playback volume')
+                .setDescription('set playback volume')
                 .addIntegerOption((opt) =>
                     opt.setName('level').setDescription('Volume (0-100)').setRequired(true).setMinValue(0).setMaxValue(100),
                 ),
@@ -65,7 +65,7 @@ export default {
         .addSubcommand((sub) =>
             sub
                 .setName('seek')
-                .setDescription('Seek to a position in the current track')
+                .setDescription('seek to a position in the current track')
                 .addIntegerOption((opt) =>
                     opt.setName('seconds').setDescription('Position in seconds').setRequired(true).setMinValue(0),
                 ),
@@ -73,7 +73,7 @@ export default {
         .addSubcommand((sub) =>
             sub
                 .setName('remove')
-                .setDescription('Remove a track from the queue')
+                .setDescription('remove a track from the queue')
                 .addIntegerOption((opt) =>
                     opt.setName('position').setDescription('Queue position').setRequired(true).setMinValue(1),
                 ),
@@ -81,26 +81,26 @@ export default {
         .addSubcommand((sub) =>
             sub
                 .setName('move')
-                .setDescription('Move a track in the queue')
+                .setDescription('move a track in the queue')
                 .addIntegerOption((opt) =>
-                    opt.setName('from').setDescription('Current position').setRequired(true).setMinValue(1),
+                    opt.setName('from').setDescription('current position').setRequired(true).setMinValue(1),
                 )
                 .addIntegerOption((opt) =>
-                    opt.setName('to').setDescription('New position').setRequired(true).setMinValue(1),
+                    opt.setName('to').setDescription('new position').setRequired(true).setMinValue(1),
                 ),
         )
         .addSubcommand((sub) =>
-            sub.setName('clear').setDescription('Clear the queue'),
+            sub.setName('clear').setDescription('clear the queue'),
         )
         .addSubcommand((sub) =>
-            sub.setName('leave').setDescription('Disconnect the bot from the voice channel'),
+            sub.setName('leave').setDescription('disconnect the bot from the voice channel'),
         )
         .addSubcommand((sub) =>
             sub
                 .setName('247')
-                .setDescription('Toggle 24/7 mode (stay in voice channel when idle)')
+                .setDescription('toggle 24/7 mode (stay in voice channel when idle)')
                 .addBooleanOption((opt) =>
-                    opt.setName('enabled').setDescription('Enable or disable 24/7 mode').setRequired(true),
+                    opt.setName('enabled').setDescription('enable or disable 24/7 mode').setRequired(true),
                 ),
         ),
 
