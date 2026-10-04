@@ -16,7 +16,7 @@ import { InteractionHelper } from '../../utils/interactionHelper.js';
 import { botConfig } from '../../config/bot.js';
 
 const GIVEAWAY_MIN_WINNERS = botConfig.giveaways?.minimumWinners ?? 1;
-const GIVEAWAY_MAX_WINNERS = botConfig.giveaways?.maximumWinners ?? 10;
+const GIVEAWAY_MAX_WINNERS = botConfig.giveaways?.maximumWinners ?? 3;
 
 export default {
     data: new SlashCommandBuilder()
